@@ -1,5 +1,4 @@
 ### Table of Contents
-https://github.com/kbentum/math4610/blob/master/src/error/maceps.md#function-name-singlemaceps
 1. [singleMacEps](#function-name-singlemaceps)
    1. [Description](#description)
    2. [Input](#input)
