@@ -1,4 +1,6 @@
 add_library(approximations STATIC
+    polynomial.cpp
+    polynomial.hpp
 	series.cpp
 	series.hpp)
 
