@@ -1,17 +1,17 @@
 ### Table of Contents
 https://github.com/kbentum/math4610/blob/master/src/error/maceps.md#function-name-singlemaceps
 1. [singleMacEps](#function-name-singlemaceps)
-  1. [Description](#description)
-  2. [Input](#input)
-  3. [Output](#output)
-  4. [Code](#code)
-  5. [Example](#example)
+   1. [Description](#description)
+   2. [Input](#input)
+   3. [Output](#output)
+   4. [Code](#code)
+   5. [Example](#example)
 2. [doubleMacEps](#function-name-doublemaceps)
-  1. [Description](#description-1)
-  2. [Input](#input-1)
-  3. [Output](#output-1)
-  4. [Code](#code-1)
-  5. [Example](#example-1)
+   1. [Description](#description-1)
+   2. [Input](#input-1)
+   3. [Output](#output-1)
+   4. [Code](#code-1)
+   5. [Example](#example-1)
 
 # Function Name: singleMacEps
 
