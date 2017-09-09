@@ -100,5 +100,5 @@ int main(){
 ```
 Output:
 ```
-The number of digits of precision for a float is 7
+The number of digits of precision for a float is 16
 ```
