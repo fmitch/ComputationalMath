@@ -1,8 +1,8 @@
 #ifndef PRECISION_HPP
 #define PRECISION_HPP
 
-float singleMacEps();
-double doubleMacEps();
-long double longDoubleMacEps();
+int singleMacEps();
+int doubleMacEps();
+int longDoubleMacEps();
 
 #endif

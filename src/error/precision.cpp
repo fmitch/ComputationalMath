@@ -19,26 +19,26 @@ Summary:
 #include <stdio.h>
 #include <math.h>
 
-float singleMacEps(){
+int singleMacEps(){
     float floatEps=1;
     while(1 + floatEps  != 1.0)
         floatEps /= 2;
-    //return round(log10(floatEps))*-1;
-    return floatEps;
+    return round(log10(floatEps))*-1;
+    //return floatEps;
 }
 
-double doubleMacEps(){
+int doubleMacEps(){
     double dubEps=1;
     while(1 + dubEps  != 1.0)
         dubEps /= 2;
-    //return round(log10(dubEps))*-1;
-    return dubEps;
+    return round(log10(dubEps))*-1;
+    //return dubEps;
 }
 
-long double longDoubleMacEps(){
+int longDoubleMacEps(){
     long double ldubEps=1;
     while(1 + ldubEps  != 1.0)
         ldubEps /= 2;
-    //return round(log10(ldubEps))*-1;
-    return ldubEps;
+    return round(log10(ldubEps))*-1;
+    //return ldubEps;
 }
