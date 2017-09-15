@@ -1,5 +1,5 @@
 ### Table of Contents
-1. [singleMacEps](#function-name-bisect)
+1. [bisect](#function-name-bisect)
    1. [Description](#description)
    2. [Input](#input)
    3. [Output](#output)
