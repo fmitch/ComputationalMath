@@ -83,7 +83,6 @@ int main(){
 Output:
 ```
 A root was found in the interval (0,50]: 2.236068
-A root was found in the interval [0,50]: 0.000000
 ```
 
 ### Author: 
