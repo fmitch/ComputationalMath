@@ -77,8 +77,6 @@ double bisect(double a, double b, funx f, double tol, int maxIter){
 int main(){
     double out = bisect(0,5, [](double x){return x*x - 5;}, 0.000001, 50);
     printf("A root was found in the interval (0,50]: %f\n", out);
-    out = bisect(0,5, [](double x){return x*x - 5;}, 0.00, 50);
-    printf("A root was found in the interval [0,50]: %f\n", out);
     return 0;
 }
 ```
