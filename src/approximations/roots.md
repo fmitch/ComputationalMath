@@ -6,11 +6,11 @@
    4. [Code](#code)
    5. [Example](#example)
 1. [fixedPointIteration](#function-name-fixedpointiteration)
-   1. [Description](#description)
-   2. [Input](#input)
-   3. [Output](#output)
-   4. [Code](#code)
-   5. [Example](#example)
+   1. [Description](#description-1)
+   2. [Input](#input-1)
+   3. [Output](#output-1)
+   4. [Code](#code-1)
+   5. [Example](#example-1)
 
 # Function Name: bisect
 
