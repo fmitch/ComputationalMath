@@ -3,7 +3,6 @@ add_library(approximations STATIC
     derivative.hpp
     polynomial.cpp
     polynomial.hpp
-    roots.cpp
     roots.hpp
 	series.cpp
 	series.hpp)
