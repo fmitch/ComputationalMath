@@ -217,7 +217,9 @@ than the required tolerance.
 *  `int maxIter = 1e5` - The maximum number of iterations.  
 
 ## Output:
-*  `double x0` - The root approximated using Newton's method. If no solution within tolerance is found within the max number of iterations, the closest value is returned, with an error message.
+*  `double x0` - The root approximated using Newton's method. If no solution
+within tolerance is found within the max number of iterations, the closest 
+value is returned, with an error message.
 
 ## Code:
 ```c
@@ -248,7 +250,8 @@ double simpleNewtonsMethod(double x0, funx f, funx2 df, double tol=1e-12, int ma
 #include <stdio.h>
 
 int main(){
-    double num = simpleNewtonsMethod( -1.1, [](double x){return x*exp(-x);} , [](double x){return -x*exp(-x) + exp(-x) ;}, 1e-12, 1e9);
+    double num = simpleNewtonsMethod( -1.1, [](double x){return x*exp(-x);} , 
+        [](double x){return -x*exp(-x) + exp(-x) ;}, 1e-12, 1e9);
     printf("The root returned by a simple Newton's method of x*e^-x is %f\n", num);
 }
 ```
@@ -297,11 +300,13 @@ double newtonsMethod(double x0, funx f, funx2 df, double tol=1e-12, int maxIter=
     double df0 = df(x0);
     double prevError = DBL_MAX;
     if (fabs(df0) < DBL_EPSILON)
-        throw std::runtime_error("The function seems to have a derivative of approximately 0.\n");
+        throw std::runtime_error("The function seems to have a derivative 
+            of approximately 0.\n");
     double xk = x0;
     while (( error > tol) && (counter < maxIter)){
         if (prevError < error)
-            throw std::runtime_error("The initial guess is not sufficiently close to the root so as to converge.");
+            throw std::runtime_error("The initial guess is not sufficiently
+                close to the root so as to converge.");
         counter++;
         xk = x0 - f0/df0;
         prevError = error;
@@ -310,7 +315,8 @@ double newtonsMethod(double x0, funx f, funx2 df, double tol=1e-12, int maxIter=
         f0 = f(x0);
         df0 = df(x0);
         if (df0 < tol)
-            throw std::runtime_error("The function seems to have a derivative of approximately 0 at the initial guess x0.\n");
+            throw std::runtime_error("The function seems to have a 
+                derivative of approximately 0 at the initial guess x0.\n");
     }
     if (counter >= maxIter)
             throw std::runtime_error("Max iterations reached.\n");
@@ -326,17 +332,21 @@ double newtonsMethod(double x0, funx f, funx2 df, double tol=1e-12, int maxIter=
 #include <stdio.h>
 
 int main(){
-    double num = newtonsMethod( -1, [](double x){return x*exp(-x);} , [](double x){return -x*exp(-x) + exp(-x) ;}, 1e-12, 1e9);
+    double num = newtonsMethod( -1, [](double x){return x*exp(-x);} , 
+        [](double x){return -x*exp(-x) + exp(-x) ;}, 1e-12, 1e9);
     printf("The root returned by Newton's method of x*e^-x is %f\n", num);
 
-    num = newtonsMethod( 1, [](double x){return x*exp(-x);} , [](double x){return -x*exp(-x) + exp(-x) ;}, 1e-12, 1e9);
+    num = newtonsMethod( 1, [](double x){return x*exp(-x);} , 
+        [](double x){return -x*exp(-x) + exp(-x) ;}, 1e-12, 1e9);
     printf("The root returned by Newton's method of x*e^-x is %f\n", num);
 }
 ```
 OUTPUT:
 ```
 The root returned by Newton's method of x*e^-x is 0.000000
-libc++abi.dylib: terminating with uncaught exception of type std::runtime_error: The function seems to have a derivative of approximately 0 at the initial guess x0.
+libc++abi.dylib: terminating with uncaught exception of type 
+std::runtime_error: The function seems to have a derivative of 
+approximately 0 at the initial guess x0.
 ```
 
 
@@ -379,10 +389,12 @@ double secantMethod(double x0, double x1, funx f,  double tol=1e-12, int maxIter
     double f1 = f(x1);
     double xk = x1;
     if (fabs(f1 - f0) < DBL_EPSILON)
-        throw std::runtime_error("The function seems to have a derivative of approximately 0 at the initial guess.\n");
+        throw std::runtime_error("The function seems to have a derivative 
+            of approximately 0 at the initial guess.\n");
     while ((error > tol) && (counter < maxIter)){
         if (prevError < error)
-            throw std::runtime_error("The initial guesses are not sufficiently close to the root so as to converge.");
+            throw std::runtime_error("The initial guesses are not sufficiently
+                close to the root so as to converge.");
         counter++;
         xk = x1 - f1*(x1 - x0)/(f1 - f0); 
         prevError = error;
@@ -499,7 +511,8 @@ See [bisectOnce](#function-name-bisectOnce) and [newtonsMethod](#function-name-n
 ## Code:
 ```c
 template <typename funx, typename funx2>
-double hybridNewtonsMethod(double x0, double a, double b, funx f, funx2 df, double tol=1e-12, int maxIter=1e5){
+double hybridNewtonsMethod(double x0, double a, double b, funx f, 
+    funx2 df, double tol=1e-12, int maxIter=1e5){
     while(true){
         try{
             return newtonsMethod(x0, f, df, tol, maxIter);
@@ -523,16 +536,21 @@ double hybridNewtonsMethod(double x0, double a, double b, funx f, funx2 df, doub
 #include <float.h>
 
 int main(){
-    num = hybridNewtonsMethod( 1, -1, 1.5, [](double x){return x*exp(-x);} , [](double x){return -x*exp(-x) + exp(-x) ;});
-    printf("The root returned by the hybrid Newton's method of x*e^-x is %f\n", num);
+    num = hybridNewtonsMethod( 1, -1, 1.5, [](double x){return x*exp(-x);} , 
+        [](double x){return -x*exp(-x) + exp(-x) ;});
+    printf("The root returned by the hybrid Newton's method of x*e^-x 
+        is %f\n", num);
 
-    num = hybridNewtonsMethod( 0.7978665712413240755245781207, -0.5, 2, [](double x){return 3*x*sin(10*x);} , [](double x){return 3*sin(10*x) + 30*x*cos(10*x) ;});
-    printf("The root returned by the hybrid Newton's method of 3x*cos(10x) is %f\n", num);
+    num = hybridNewtonsMethod( 0.7978665712413240755245781207, -0.5, 2, 
+        [](double x){return 3*x*sin(10*x);} , [](double x){return 3*sin(10*x) + 30*x*cos(10*x) ;});
+    printf("The root returned by the hybrid Newton's method of 3x*cos(10x) 
+        is %f\n", num);
 
     num = hybridSecantMethod( 1, 1.1, -1, 1.5, [](double x){return x*exp(-x);} );
     printf("The root returned by the hybrid secant method of x*e^-x is %f\n", num);
 
-    num = hybridSecantMethod( 0.7978665712413240755245781207, 0.7978665712413240755245781307, -0.5, 2,  [](double x){return 3*x*sin(10*x);} );
+    num = hybridSecantMethod( 0.7978665712413240755245781207, 
+        0.7978665712413240755245781307, -0.5, 2,  [](double x){return 3*x*sin(10*x);} );
     printf("The root returned by the hybrid secant method of 3x*cos(10x) is %f\n", num);
 
     return 0;
@@ -574,7 +592,8 @@ See [bisectOnce](#function-name-bisectOnce) and [secantMethod](#function-name-se
 ## Code:
 ```c
 template <typename funx, typename funx2>
-double hybridSecantMethod(double x0, double x1,  double a, double b, funx f, double tol=1e-12, int maxIter=1e5){
+double hybridSecantMethod(double x0, double x1,  double a, double b, 
+    funx f, double tol=1e-12, int maxIter=1e5){
     while(true){
         try{
             return secantMethod(x0, x1, f, tol, maxIter);
@@ -602,7 +621,8 @@ int main(){
     num = hybridSecantMethod( 1, 1.1, -1, 1.5, [](double x){return x*exp(-x);} );
     printf("The root returned by the hybrid secant method of x*e^-x is %f\n", num);
 
-    num = hybridSecantMethod( 0.7978665712413240755245781207, 0.7978665712413240755245781307, -0.5, 2,  [](double x){return 3*x*sin(10*x);} );
+    num = hybridSecantMethod( 0.7978665712413240755245781207, 
+        0.7978665712413240755245781307, -0.5, 2,  [](double x){return 3*x*sin(10*x);} );
     printf("The root returned by the hybrid secant method of 3x*cos(10x) is %f\n", num);
 
     return 0;
