@@ -1,6 +1,5 @@
 #include <math.h>
-#include <tuple>
-#include <stdio.h>
+#include "factoring.hpp"
 
 double rowMax(double* A, int row, int length){
     double ans = fabs(*((A+row*length) + 0));
@@ -17,7 +16,6 @@ void sppLU(double* A, int* perm, int M){
     int permSwapper;
     for (int i = 0; i < M; i++){
         perm[i] = i;
-        printf("%d\n", perm[i]);
         pointerMap[i] = A+i*M;
     }
      
