@@ -30,3 +30,8 @@
        4. [matMul](./src/linalg/matop.md#function-name-matmul)
        5. [matVecMul](./src/linalg/matop.md#function-name-matvecmul)
        6. [dotProduct](./src/linalg/matop.md#function-name-dotproduct)
+   4. [Parallel Matrix Operations](./src/linalg/parmatop.md)
+       1. [parMatMul](./src/linalg/parmatop.md#function-name-parmatmul)
+       2. [parMatVecMul](./src/linalg/parmatop.md#function-name-parmatvecmul)
+   5. [Matrix Decomposition](./src/linalg/factoring.md)
+       1. [sppLU](./src/linalg/factoring.md#function-name-sppLU)
