@@ -35,3 +35,8 @@
        2. [parMatVecMul](./src/linalg/parmatop.md#function-name-parmatvecmul)
    5. [Matrix Decomposition](./src/linalg/factoring.md)
        1. [sppLU](./src/linalg/factoring.md#function-name-sppLU)
+   6. [Iterative Matrix Methods](./src/linalg/iterative.md)
+       1. [Jacobi Iteration](./src/linalg/iterative.md#function-name-jacobi)
+       2. [Gauss-Seidel Iteration](./src/linalg/iterative.md#function-name-gaussSeidel)
+       3. [Steeptest Descent Iteration](./src/linalg/iterative.md#function-name-steepestDescent)
+       4. [Conjugate Gradient Iteration](./src/linalg/iterative.md#function-name-conjugateGradient)
