@@ -40,3 +40,8 @@
        2. [Gauss-Seidel Iteration](./src/linalg/iterative.md#function-name-gaussSeidel)
        3. [Steeptest Descent Iteration](./src/linalg/iterative.md#function-name-steepestDescent)
        4. [Conjugate Gradient Iteration](./src/linalg/iterative.md#function-name-conjugateGradient)
+   7. [Parallel Iterative Matrix Methods](./src/linalg/pariterative.md)
+       1. [Parallel Jacobi Iteration](./src/linalg/pariterative.md#function-name-jacobi)
+       2. [Parallel Gauss-Seidel Iteration](./src/linalg/pariterative.md#function-name-gaussSeidel)
+       3. [Parallel Steeptest Descent Iteration](./src/linalg/pariterative.md#function-name-steepestDescent)
+       4. [Parallel Conjugate Gradient Iteration](./src/linalg/pariterative.md#function-name-conjugateGradient)
