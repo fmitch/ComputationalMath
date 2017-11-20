@@ -57,7 +57,6 @@ std::pair <double, double*> powerMethodPair(double* A, double* v0, int N, long d
 double inversePowerMethod(double* A, double* v0, int N, long double tol, int maxIter){
     double* y = new double[N];
     y = parConjugateGradient(A, v0, N);
-    //y = parJacobi(A, v0, N);
     double* x = new double[N];
     double error = tol*100;
     int count=0;
@@ -68,7 +67,6 @@ double inversePowerMethod(double* A, double* v0, int N, long double tol, int max
         for (int i = 0; i < N; i++)
             x[i] = y[i] / ymag;
         y = parConjugateGradient(A, x, N);
-        //y = parJacobi(A, x, N);
         lambda = dotProduct(x,y,N);
         error = fabs(lambda - lambdaOld);
         lambdaOld = lambda;
