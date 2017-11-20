@@ -45,3 +45,8 @@
        2. [Parallel Gauss-Seidel Iteration](./src/linalg/pariterative.md#function-name-gaussSeidel)
        3. [Parallel Steeptest Descent Iteration](./src/linalg/pariterative.md#function-name-steepestDescent)
        4. [Parallel Conjugate Gradient Iteration](./src/linalg/pariterative.md#function-name-conjugateGradient)
+   8. [Power Methods](./src/linalg/power.md)
+       1. [Power Method](./src/linalg/power.md#function-name-powermethod)
+       2. [Power Method Pair](./src/linalg/power.md#function-name-powermethodpair)
+       3. [Inverse Power Method](./src/linalg/power.md#function-name-inversepowermethod)
+       4. [Inverse Power Method Pair](./src/linalg/power.md#function-name-inversepowermethodpair)
