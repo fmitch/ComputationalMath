@@ -6,19 +6,19 @@
     3. [Output](#output)
     4. [Code](#code)
     5. [Example](#example)
-1. [Power Method](#function-name-powerMethodPair)
+2. [Power Method Pair](#function-name-powerMethodPair)
     1. [Description](#description-1)
     2. [Input](#input-1)
     3. [Output](#output-1)
     4. [Code](#code-1)
     5. [Example](#example-1)
-1. [Power Method](#function-name-inversePowerMethod)
+3. [Inverse Power Method](#function-name-inversePowerMethod)
     1. [Description](#description-2)
     2. [Input](#input-2)
     3. [Output](#output-2)
     4. [Code](#code-2)
     5. [Example](#example-2)
-1. [Inverse Power Method Pair](#function-name-inversePowerMethodPair)
+4. [Inverse Power Method Pair](#function-name-inversePowerMethodPair)
     1. [Description](#description-3)
     2. [Input](#input-3)
     3. [Output](#output-3)
@@ -231,7 +231,7 @@ lambda 4.940448
 
 
 
-## Function Name: powerMethodPair
+## Function Name: inversePowerMethodPair
 
 ## Description:
 Use the power method to approximate the smallest eigenvalue of a real matrix A.
