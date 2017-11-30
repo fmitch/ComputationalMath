@@ -50,3 +50,6 @@
        2. [Power Method Pair](./src/linalg/power.md#function-name-powermethodpair)
        3. [Inverse Power Method](./src/linalg/power.md#function-name-inversepowermethod)
        4. [Inverse Power Method Pair](./src/linalg/power.md#function-name-inversepowermethodpair)
+4. [Polynomial Interpolation](./src/interpolation/interpolation.md)
+   1. [Divided Difference Coefficients](./src/interpolation/interpolation.md#function-name-dividedDifferenceCoefficients)
+   2. [Newton Evaluation](./src/interpolation/interpolation.md#function-name-newtonEvalutation)
