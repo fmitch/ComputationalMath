@@ -1,11 +1,11 @@
 # Polynomial Interpolation
 ## Table of Contents
-1. [Power Method](#function-name-dividedDifferenceCoefficients)
+1. [Divided Difference Coefficients](#function-name-dividedDifferenceCoefficients)
     1. [Description](#description)
     2. [Input](#input)
     3. [Output](#output)
     4. [Code](#code)
-2. [Power Method Pair](#function-name-newtonEvaluation)
+2. [Newton Evalutaion](#function-name-newtonEvaluation)
     1. [Description](#description-1)
     2. [Input](#input-1)
     3. [Output](#output-1)
