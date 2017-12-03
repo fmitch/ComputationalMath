@@ -20,9 +20,9 @@ for this data, and return the coefficients which will be used to give the Newton
 form of the interpolating polynomial.
  
 ## Input:
-`double* x` - A pointer to an array containing the abscissa points of the dataset
-`double* y` - A pointer to an array containing the ordinate points of the dataset
-`int size` - The length of the arrays x and y.
+*  `double* x` - A pointer to an array containing the abscissa points of the dataset
+*  `double* y` - A pointer to an array containing the ordinate points of the dataset
+*  `int size` - The length of the arrays x and y.
     
 ## Output:
 `double* coeff` - The coefficients of the Newton form of the polynomial.

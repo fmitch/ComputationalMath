@@ -25,9 +25,9 @@
 Calculate the error between two vectors, v1, and v2. Use the 1 norm for the error.
 
 ## Input:
-`double* v1` - A pointer to an array of elements
-`double* v2` - A pointer to an array of elements
-`int size` - The number of elements in the array
+*  `double* v1` - A pointer to an array of elements  
+*  `double* v2` - A pointer to an array of elements  
+*  `int size` - The number of elements in the array  
 
 ## Output:
 Return the 1 norm of v1 - v2
@@ -42,13 +42,6 @@ double vec1error(double* v1, double* v2, int size){
 }
 ```
 
-## Example:
-```c
-```
-
-Output:
-```
-```
 
 # Function Name: vec2error
 
@@ -56,9 +49,9 @@ Output:
 Calculate the error between two vectors, v1, and v2. Use the 2 norm for the error.
 
 ## Input:
-`double* v1` - A pointer to an array of elements
-`double* v2` - A pointer to an array of elements
-`int size` - The number of elements in the array
+*  `double* v1` - A pointer to an array of elements  
+*  `double* v2` - A pointer to an array of elements  
+*  `int size` - The number of elements in the array  
 
 ## Output:
 Return the 2 norm of v1 - v2
@@ -73,22 +66,15 @@ double vec2error(double* v1, double*> v2, int size){
 }
 ```
 
-## Example:
-```c
-```
-Output:
-```
-```
-
 # Function Name: vecInfError
 
 ## Description: 
 Calculate the error between two vectors, v1, and v2. Use the Infinity norm for the error.
 
 ## Input:
-`double* v1` - A pointer to an array of elements
-`double* v2` - A pointer to an array of elements
-`int size` - The number of elements in the array
+*  `double* v1` - A pointer to an array of elements  
+*  `double* v2` - A pointer to an array of elements  
+*  `int size` - The number of elements in the array  
 
 ## Output:
 Return the Infinity norm of v1 - v2
@@ -103,17 +89,9 @@ double vecInfError(double* v1, double* v2, int size){
 }
 ```
 
-## Example:
-```c
-```
-Output:
-```
-```
-
-
 ### Author: 
 Frost Mitchell
 
 ### Last edited:
-2017-10-9
+2017-12-2
 

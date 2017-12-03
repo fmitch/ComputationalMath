@@ -53,3 +53,6 @@
 4. [Polynomial Interpolation](./src/interpolation/interpolation.md)
    1. [Divided Difference Coefficients](./src/interpolation/interpolation.md#function-name-dividedDifferenceCoefficients)
    2. [Newton Evaluation](./src/interpolation/interpolation.md#function-name-newtonEvalutation)
+5. [Discrete Fourier Transform](./src/fft/fft.md)
+   1. [Fast Fourier Transform](./src/fft/fft.md#function-name-fft)
+   2. [Inverse Fast Fourier Transform](./src/fft/fft.md#function-name-ifft)

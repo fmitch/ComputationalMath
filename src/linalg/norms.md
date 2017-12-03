@@ -37,8 +37,8 @@
 Calculate the 1 norm of a vector, or the sum of the absolute value of each element.
 
 ## Input:
-`double* vec` - A pointer to an array of elements
-`int size` - The size of the vector
+*  `double* vec` - A pointer to an array of elements  
+*  `int size` - The size of the vector  
 
 ## Output:
 Returns the sum of the absolute values of each element in the vector
@@ -69,8 +69,8 @@ Output:
 Calculate the 2 norm of a vector, or the square root of the sum of the squares of each element in the vector.
 
 ## Input:
-`double* vec` - A pointer to an array of elements
-`int size` - The size of the vector
+*  `double* vec` - A pointer to an array of elements  
+*  `int size` - The size of the vector  
 
 ## Output:
 Returns the square root of the sum of the squares of each element in the vector.
@@ -101,11 +101,12 @@ Output:
 Calculate the infinity norm of a vector, or the maximum absolute value of the elements in the vector.
 
 ## Input:
-`double* vec` - A pointer to an array of elements
-`int size` - The size of the vector
+*  `double* vec` - A pointer to an array of elements  
+*  `int size` - The size of the vector  
 
 ## Output:
 Returns the maximum absolute value of the elements in the vector.
+
 ## Code:
 ```c
 double vecInfNorm(double* vec, int size){
@@ -133,12 +134,13 @@ Output:
 Calculate the 1 norm of a 2D matrix, or the maximum sum of the absolute values of each column.
 
 ## Input:
-`double* mat` - A pointer to a 2D array of elements
-`int M` - The number of rows in the matrix 
-`int N` - The number of columns in the matrix 
-
+*  `double* mat` - A pointer to a 2D array of elements  
+*  `int M` - The number of rows in the matrix   
+*  `int N` - The number of columns in the matrix   
+  
 ## Output:
 Returns the maximum sum of the absolute values of each column.
+
 ## Code:
 ```c
 double mat1norm(double* mat, int M, int N){
@@ -173,12 +175,13 @@ Output:
 Calculate the 1 norm of a 2D matrix, or the maximum sum of the absolute values of each row.
 
 ## Input:
-`double* mat` - A pointer to a 2D array of elements
-`int M` - The number of rows in the matrix 
-`int M` - The number of columns in the matrix 
+*  `double* mat` - A pointer to a 2D array of elements  
+*  `int M` - The number of rows in the matrix   
+*  `int M` - The number of columns in the matrix   
 
 ## Output:
 Returns the maximum sum of the absolute values of each row.
+
 ## Code:
 ```c
 double matInfNorm(double* mat, int M, int N){
@@ -212,5 +215,4 @@ Output:
 Frost Mitchell
 
 ### Last edited:
-2017-10-9
-
+2017-12-2

@@ -15,7 +15,7 @@ Summary:
     of 1 and a large negative exponent.
 
 ***********************************/
-#include "precision.hpp"
+#include "maceps.hpp"
 #include <stdio.h>
 #include <math.h>
 

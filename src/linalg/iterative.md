@@ -31,12 +31,12 @@
 Uses the Jacobi method of iteration to solve the linear system Ax = b.
  
 ## Input:
-`double* A` - A pointer to a square, 2D array of doubles 
-`double* b` - A pointer to an array containing the solution b to Ax=b.  
-`int N` - The dimension of the square matrix A.
-`int& count = 0` - A counter which will contain the number of iterations performed.
-`long double tol = 1e-8` - The tolerance for convergence.
-`int maxIter = 1e6` - The maximum number of iterations performed before the method exits..
+*  `double* A` - A pointer to a square, 2D array of doubles   
+*  `double* b` - A pointer to an array containing the solution b to Ax=b.    
+*  `int N` - The dimension of the square matrix A.  
+*  `int& count = 0` - A counter which will contain the number of iterations performed.  
+*  `long double tol = 1e-8` - The tolerance for convergence.  
+*  `int maxIter = 1e6` - The maximum number of iterations performed before the method exits.  
     
 ## Output:
 `double* xk` - A pointer to the solution x for Ax=b. Once the error between two 
@@ -104,12 +104,12 @@ OUTPUT:
 Use the Gauss-Seidel method of iteration to solve the linear system Ax = b.
  
 ## Input:
-`double* A` - A pointer to a square, 2D array of doubles 
-`double* b` - A pointer to an array containing the solution b to Ax=b.  
-`int N` - The dimension of the square matrix A.
-`int& count = 0` - A counter which will contain the number of iterations performed.
-`long double tol = 1e-8` - The tolerance for convergence.
-`int maxIter = 1e6` - The maximum number of iterations performed before the method exits..
+*  `double* A` - A pointer to a square, 2D array of doubles   
+*  `double* b` - A pointer to an array containing the solution b to Ax=b.   
+*  `int N` - The dimension of the square matrix A.  
+*  `int& count = 0` - A counter which will contain the number of iterations performed.  
+*  `long double tol = 1e-8` - The tolerance for convergence.  
+*  `int maxIter = 1e6` - The maximum number of iterations performed before the method exits.  
     
 ## Output:
 `double* xk` - A pointer to the solution x for Ax=b. Once the error between two 
@@ -183,12 +183,12 @@ OUTPUT:
 Use the steepest descent or gradient method of iteration to solve the linear system Ax = b.
  
 ## Input:
-`double* A` - A pointer to a square, 2D array of doubles 
-`double* b` - A pointer to an array containing the solution b to Ax=b.  
-`int N` - The dimension of the square matrix A.
-`int& count = 0` - A counter which will contain the number of iterations performed.
-`long double tol = 1e-8` - The tolerance for convergence.
-`int maxIter = 1e6` - The maximum number of iterations performed before the method exits..
+*  `double* A` - A pointer to a square, 2D array of doubles   
+*  `double* b` - A pointer to an array containing the solution b to Ax=b.    
+*  `int N` - The dimension of the square matrix A.  
+*  `int& count = 0` - A counter which will contain the number of iterations performed.  
+*  `long double tol = 1e-8` - The tolerance for convergence.  
+*  `int maxIter = 1e6` - The maximum number of iterations performed before the method exits.  
     
 ## Output:
 `double* xk` - A pointer to the solution x for Ax=b. Once the dot product
@@ -257,12 +257,12 @@ If A is a symmetric, positive definite matrix, this method converges much faster
 on average than any of the other iterative matrix methods.
  
 ## Input:
-`double* A` - A pointer to a square, 2D array of doubles 
-`double* b` - A pointer to an array containing the solution b to Ax=b.  
-`int N` - The dimension of the square matrix A.
-`int& count = 0` - A counter which will contain the number of iterations performed.
-`long double tol = 1e-8` - The tolerance for convergence.
-`int maxIter = 1e6` - The maximum number of iterations performed before the method exits..
+*  `double* A` - A pointer to a square, 2D array of doubles   
+*  `double* b` - A pointer to an array containing the solution b to Ax=b.    
+*  `int N` - The dimension of the square matrix A.  
+*  `int& count = 0` - A counter which will contain the number of iterations performed.  
+*  `long double tol = 1e-8` - The tolerance for convergence.  
+*  `int maxIter = 1e6` - The maximum number of iterations performed before the method exits.  
     
 ## Output:
 `double* xk` - A pointer to the solution x for Ax=b. Once the dot product
@@ -332,4 +332,4 @@ OUTPUT:
 Frost Mitchell
 
 ### Last edited:
-2017-11-12
+2017-12-2

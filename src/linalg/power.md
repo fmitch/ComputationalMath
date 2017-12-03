@@ -33,14 +33,14 @@ The power method is an interative method which approximates the eigenvalue by
 multiplying a vector by A until the error in lambda is less than the tolerance.
  
 ## Input:
-`double* A` - A pointer to a square, 2D array of doubles 
-`double* v0` - A pointer to an array containing a nonzero guess at the eigenvector.  
-`int N` - The dimension of the square matrix A.
-`long double tol = 1e-8` - The tolerance for convergence.
-`int maxIter = 1e6` - The maximum number of iterations performed before the method exits..
+*  `double* A` - A pointer to a square, 2D array of doubles   
+*  `double* v0` - A pointer to an array containing a nonzero guess at the eigenvector.    
+*  `int N` - The dimension of the square matrix A.  
+*  `long double tol = 1e-8` - The tolerance for convergence.  
+*  `int maxIter = 1e6` - The maximum number of iterations performed before the method exits.  
     
 ## Output:
-`double lambda` - The approximated largest eigenvalue. This value is returned once
+*  `double lambda` - The approximated largest eigenvalue. This value is returned once
 the error between lambda in iterations is less that the tolerance.
 
 ## Code:
@@ -101,14 +101,14 @@ The power method is an interative method which approximates the eigenvalue by
 multiplying a vector by A until the error in lambda is less than the tolerance.
  
 ## Input:
-`double* A` - A pointer to a square, 2D array of doubles 
-`double* v0` - A pointer to an array containing a nonzero guess at the eigenvector.  
-`int N` - The dimension of the square matrix A.
-`long double tol = 1e-8` - The tolerance for convergence.
-`int maxIter = 1e6` - The maximum number of iterations performed before the method exits..
+*  `double* A` - A pointer to a square, 2D array of doubles   
+*  `double* v0` - A pointer to an array containing a nonzero guess at the eigenvector.    
+*  `int N` - The dimension of the square matrix A.  
+*  `long double tol = 1e-8` - The tolerance for convergence.  
+*  `int maxIter = 1e6` - The maximum number of iterations performed before the method exits.  
     
 ## Output:
-`std::pair<double, double*> lambda` - A std::pair containing the approximated
+*  `std::pair<double, double*> lambda` - A std::pair containing the approximated
 largest eigenvalue and the pointer to the corresponding eigenvector.
 This value is returned once
 the error between lambda in iterations is less that the tolerance.
@@ -171,14 +171,14 @@ taking the action of the inverse of A on a vector until the error in lambda is
 less than the tolerance.
  
 ## Input:
-`double* A` - A pointer to a square, 2D array of doubles 
-`double* v0` - A pointer to an array containing a nonzero guess at the eigenvector.  
-`int N` - The dimension of the square matrix A.
-`long double tol = 1e-8` - The tolerance for convergence.
-`int maxIter = 1e6` - The maximum number of iterations performed before the method exits..
+*  `double* A` - A pointer to a square, 2D array of doubles   
+*  `double* v0` - A pointer to an array containing a nonzero guess at the eigenvector.    
+*  `int N` - The dimension of the square matrix A.  
+*  `long double tol = 1e-8` - The tolerance for convergence.  
+*  `int maxIter = 1e6` - The maximum number of iterations performed before the method exits.  
     
 ## Output:
-`double lambda` - The approximated smallest eigenvalue. This value is returned once
+*  `double lambda` - The approximated smallest eigenvalue. This value is returned once
 the error between lambda in iterations is less that the tolerance.
 
 ## Code:
@@ -240,14 +240,14 @@ taking the action of the inverse of A on a vector until the error in lambda is
 less than the tolerance.
  
 ## Input:
-`double* A` - A pointer to a square, 2D array of doubles 
-`double* v0` - A pointer to an array containing a nonzero guess at the eigenvector.  
-`int N` - The dimension of the square matrix A.
-`long double tol = 1e-8` - The tolerance for convergence.
-`int maxIter = 1e6` - The maximum number of iterations performed before the method exits..
+*  `double* A` - A pointer to a square, 2D array of doubles   
+*  `double* v0` - A pointer to an array containing a nonzero guess at the eigenvector.    
+*  `int N` - The dimension of the square matrix A.  
+*  `long double tol = 1e-8` - The tolerance for convergence.  
+*  `int maxIter = 1e6` - The maximum number of iterations performed before the method exits.  
     
 ## Output:
-`std::pair<double, double*> lambda` - A std::pair containing the approximated
+*  `std::pair<double, double*> lambda` - A std::pair containing the approximated
 smallest eigenvalue and the pointer to the corresponding eigenvector.
 This value is returned once
 the error between lambda in iterations is less that the tolerance.
@@ -304,4 +304,4 @@ lambda 4.940448
 Frost Mitchell
 
 ### Last edited:
-2017-11-19
+2017-12-2

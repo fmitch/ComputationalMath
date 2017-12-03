@@ -32,15 +32,15 @@ Uses the Jacobi method of iteration to solve the linear system Ax = b. Run
 matrix operations in parallel.
  
 ## Input:
-`double* A` - A pointer to a square, 2D array of doubles 
-`double* b` - A pointer to an array containing the solution b to Ax=b.  
-`int N` - The dimension of the square matrix A.
-`int& count = 0` - A counter which will contain the number of iterations performed.
-`long double tol = 1e-8` - The tolerance for convergence.
-`int maxIter = 1e6` - The maximum number of iterations performed before the method exits..
+*  `double* A` - A pointer to a square, 2D array of doubles   
+*  `double* b` - A pointer to an array containing the solution b to Ax=b.    
+*  `int N` - The dimension of the square matrix A.  
+*  `int& count = 0` - A counter which will contain the number of iterations performed.  
+*  `long double tol = 1e-8` - The tolerance for convergence.  
+*  `int maxIter = 1e6` - The maximum number of iterations performed before the method exits.  
     
 ## Output:
-`double* xk` - A pointer to the solution x for Ax=b. Once the error between two 
+*  `double* xk` - A pointer to the solution x for Ax=b. Once the error between two 
 iterations of x is less than the tolerance, `xk` is returned.
 
 ## Code:
@@ -108,15 +108,15 @@ matrix operations in parallel.
 
  
 ## Input:
-`double* A` - A pointer to a square, 2D array of doubles 
-`double* b` - A pointer to an array containing the solution b to Ax=b.  
-`int N` - The dimension of the square matrix A.
-`int& count = 0` - A counter which will contain the number of iterations performed.
-`long double tol = 1e-8` - The tolerance for convergence.
-`int maxIter = 1e6` - The maximum number of iterations performed before the method exits..
+*  `double* A` - A pointer to a square, 2D array of doubles   
+*  `double* b` - A pointer to an array containing the solution b to Ax=b.   
+*  `int N` - The dimension of the square matrix A.  
+*  `int& count = 0` - A counter which will contain the number of iterations performed.  
+*  `long double tol = 1e-8` - The tolerance for convergence.  
+*  `int maxIter = 1e6` - The maximum number of iterations performed before the method exits.  
     
 ## Output:
-`double* xk` - A pointer to the solution x for Ax=b. Once the error between two 
+*  `double* xk` - A pointer to the solution x for Ax=b. Once the error between two 
 iterations of x is less than the tolerance, `xk` is returned.
 
 ## Code:
@@ -189,15 +189,15 @@ Use the steepest descent or gradient method of iteration to solve the linear sys
 
  
 ## Input:
-`double* A` - A pointer to a square, 2D array of doubles 
-`double* b` - A pointer to an array containing the solution b to Ax=b.  
-`int N` - The dimension of the square matrix A.
-`int& count = 0` - A counter which will contain the number of iterations performed.
-`long double tol = 1e-8` - The tolerance for convergence.
-`int maxIter = 1e6` - The maximum number of iterations performed before the method exits..
+*  `double* A` - A pointer to a square, 2D array of doubles  
+*  `double* b` - A pointer to an array containing the solution b to Ax=b.   
+*  `int N` - The dimension of the square matrix A.  
+*  `int& count = 0` - A counter which will contain the number of iterations performed.  
+*  `long double tol = 1e-8` - The tolerance for convergence.  
+*  `int maxIter = 1e6` - The maximum number of iterations performed before the method exits.   
     
 ## Output:
-`double* xk` - A pointer to the solution x for Ax=b. Once the dot product
+*  `double* xk` - A pointer to the solution x for Ax=b. Once the dot product
  of the residual vector is less than the tolerance squared times the dot product
  of the vector b, `xk` is returned.
 
@@ -267,15 +267,15 @@ in parallel.
 
  
 ## Input:
-`double* A` - A pointer to a square, 2D array of doubles 
-`double* b` - A pointer to an array containing the solution b to Ax=b.  
-`int N` - The dimension of the square matrix A.
-`int& count = 0` - A counter which will contain the number of iterations performed.
-`long double tol = 1e-8` - The tolerance for convergence.
-`int maxIter = 1e6` - The maximum number of iterations performed before the method exits..
+*  `double* A` - A pointer to a square, 2D array of doubles   
+*  `double* b` - A pointer to an array containing the solution b to Ax=b.   
+*  `int N` - The dimension of the square matrix A.  
+*  `int& count = 0` - A counter which will contain the number of iterations performed.  
+*  `long double tol = 1e-8` - The tolerance for convergence.  
+*  `int maxIter = 1e6` - The maximum number of iterations performed before the method exits.  
     
 ## Output:
-`double* xk` - A pointer to the solution x for Ax=b. Once the dot product
+*  `double* xk` - A pointer to the solution x for Ax=b. Once the dot product
  of the residual vector is less than the tolerance squared times the dot product
  of the vector b, `xk` is returned.
 
@@ -344,4 +344,4 @@ OUTPUT:
 Frost Mitchell
 
 ### Last edited:
-2017-11-17
+2017-12-2

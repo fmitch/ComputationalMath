@@ -37,6 +37,7 @@ double bisect(double a, double b, funx f, double tol, int maxIter){
             fa = fc;
         }
         error = b - a;
+        printf("%.16f\n", error);
         counter++;
     }
     if (counter == maxIter)
@@ -111,6 +112,7 @@ double newtonsMethod(double x0, funx f, funx2 df, double tol=1e-12, int maxIter=
         xk = x0 - f0/df0;
         prevError = error;
         error = fabs(xk - x0);
+        printf("%.16f\n", error);
         x0 = xk;
         f0 = f(x0);
         df0 = df(x0);
@@ -135,6 +137,7 @@ double secantMethod(double x0, double x1, funx f,  double tol=1e-12, int maxIter
         counter++;
         xk = x1 - f1*(x1 - x0)/(f1 - f0); 
         error = fabs(xk - x1);
+        printf("%.16f\n", error);
         x0 = x1;
         x1 = xk;
         f0 = f1;

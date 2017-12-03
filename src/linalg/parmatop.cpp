@@ -4,11 +4,11 @@
 
 double* parMatMul(double* A, double* B, int M, int N, int P){
     double* C = new double[M*N];
-    double dot;
     #pragma omp parallel for
     for (int i = 0; i<M; i++)
         for ( int k=0; k<P; k++)
         {
+            double dot;
             dot = 0;
             for (int j=0; j<N; j++)
             {
@@ -21,10 +21,10 @@ double* parMatMul(double* A, double* B, int M, int N, int P){
 
 double* parMatVecMul(double* A, double* v, int M, int N){
     double* C = new double[M];
-    double dot;
     #pragma omp parallel for
     for (int i = 0; i<M; i++)
     {
+        double dot;
         dot = 0;
         for (int j=0; j<N; j++)
             dot += *((A+i*N) + j) * v[j];

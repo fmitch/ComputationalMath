@@ -13,9 +13,9 @@
 Performs an LU factorization of a square matrix A using scaled partial pivoting to reduce computational error. 
  
 ## Input:
-`double* A` - A pointer to a square, 2D array of doubles 
-`int* perm` - A pointer to an integer array of length M, to record the permutations of A. 
-`int M` - The dimension of one side of the 2D array.
+*  `double* A` - A pointer to a square, 2D array of doubles   
+*  `int* perm` - A pointer to an integer array of length M, to record the permutations of A.   
+*  `int M` - The dimension of one side of the 2D array.  
     
 ## Output:
 Values in `A` and `perm` are changed in place, so the void function returns no values.
@@ -112,4 +112,4 @@ OUTPUT:
 Frost Mitchell
 
 ### Last edited:
-2017-10-9
+2017-12-2

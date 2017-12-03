@@ -20,12 +20,12 @@ Multiply two matrices, A and B. A must be MxN and B must be NxP in dimensions.
 Uses OpenMP to parallelize operations.
 
 ## Input:
-`double* A` - A pointer to a 2D array of elements
-`double* B` - A pointer to a 2D array of elements
-`int M` - The number of rows in A
-`int N` - The number of columns in A and the number of rows in B
-`int P` - The number of columns in B
-
+*  `double* A` - A pointer to a 2D array of elements
+*  `double* B` - A pointer to a 2D array of elements
+*  `int M` - The number of rows in A
+*  `int N` - The number of columns in A and the number of rows in B
+*  `int P` - The number of columns in B
+  
 ## Output:
 Returns the product of the two matrices.
 
@@ -70,10 +70,10 @@ Output:
 Calculate the product of a matrix and a vector. The matrix is MxN, and the vector must be Nx1. Uses OpenMP to parallelize operations.
 
 ## Input:
-`double* A` - A pointer to a 2D array of elements
-`double* v` - A pointer to an array of elements
-`int M` - The number of rows in the matrix 
-`int N` - The number of columns in the matrix 
+*  `double* A` - A pointer to a 2D array of elements
+*  `double* v` - A pointer to an array of elements
+*  `int M` - The number of rows in the matrix 
+*  `int N` - The number of columns in the matrix 
 
 ## Output:
 Return the product of A and v. 
@@ -112,5 +112,4 @@ Output:
 Frost Mitchell
 
 ### Last edited:
-2017-10-19
-
+2017-12-2

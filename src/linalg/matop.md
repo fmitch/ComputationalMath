@@ -43,10 +43,10 @@
 Add two 2D matrices with the same dimensions.
 
 ## Input:
-`double* A` - A pointer to a 2D array of elements
-`double* B` - A pointer to a 2D array of elements
-`int M` - The number of rows in the matrix 
-`int N` - The number of columns in the matrix 
+*  `double* A` - A pointer to a 2D array of elements  
+*  `double* B` - A pointer to a 2D array of elements  
+*  `int M` - The number of rows in the matrix   
+*  `int N` - The number of columns in the matrix   
 
 ## Output:
 Returns the sum of the two matrices, element wise.
@@ -84,10 +84,10 @@ Output:
 Calculate the difference between two matrices, A - B. 
 
 ## Input:
-`double* A` - A pointer to a 2D array of elements
-`double* B` - A pointer to a 2D array of elements
-`int M` - The number of rows in the matrix 
-`int N` - The number of columns in the matrix 
+`double* A` - A pointer to a 2D array of elements  
+`double* B` - A pointer to a 2D array of elements  
+`int M` - The number of rows in the matrix   
+`int N` - The number of columns in the matrix   
 
 ## Output:
 Returns the difference between of the two matrices, A - B.
@@ -123,10 +123,10 @@ Output:
 Multiply a matrix A by a constant scalar, a double. 
 
 ## Input:
-`double* A` - A pointer to a 2D array of elements
-`int M` - The number of rows in the matrix 
-`int N` - The number of columns in the matrix 
-`double scalar` - A real, constant scalar to multiply each element of A by. 
+*  `double* A` - A pointer to a 2D array of elements  
+*  `int M` - The number of rows in the matrix   
+*  `int N` - The number of columns in the matrix   
+*  `double scalar` - A real, constant scalar to multiply each element of A by.   
 
 ## Output:
 Returns the matrix multiplied by the constant scalar.
@@ -160,11 +160,11 @@ Output:
 Multiply two matrices, A and B. A must be MxN and B must be NxP in dimensions.
 
 ## Input:
-`double* A` - A pointer to a 2D array of elements
-`double* B` - A pointer to a 2D array of elements
-`int M` - The number of rows in A
-`int N` - The number of columns in A and the number of rows in B
-`int P` - The number of columns in B
+*  `double* A` - A pointer to a 2D array of elements  
+*  `double* B` - A pointer to a 2D array of elements  
+*  `int M` - The number of rows in A  
+*  `int N` - The number of columns in A and the number of rows in B  
+*  `int P` - The number of columns in B  
 
 ## Output:
 Returns the product of the two matrices.
@@ -207,10 +207,10 @@ Output:
 Calculate the product of a matrix and a vector. The matrix is MxN, and the vector must be Nx1.
 
 ## Input:
-`double* A` - A pointer to a 2D array of elements
-`double* v` - A pointer to an array of elements
-`int M` - The number of rows in the matrix 
-`int N` - The number of columns in the matrix 
+*  `double* A` - A pointer to a 2D array of elements  
+*  `double* v` - A pointer to an array of elements  
+*  `int M` - The number of rows in the matrix   
+*  `int N` - The number of columns in the matrix   
 
 ## Output:
 Return the product of A and v. 
@@ -250,10 +250,10 @@ Output:
 Calculate the dot product of two vectors with the same size.
 
 ## Input:
-`double* v1` - A pointer to an array of elements
-`double* v2` - A pointer to an array of elements
-`int size` - The number of elements in the vector 
-
+*  `double* v1` - A pointer to an array of elements  
+*  `double* v2` - A pointer to an array of elements  
+*  `int size` - The number of elements in the vector   
+ 
 ## Output:
 Return the dot product of v1 and v2. 
 
@@ -281,5 +281,5 @@ Output:
 Frost Mitchell
 
 ### Last edited:
-2017-10-9
+2017-12-2
 

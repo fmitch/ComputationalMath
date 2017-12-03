@@ -577,14 +577,14 @@ bisection is repeated 4 times, then the secant method is attempted again.
 See [bisectOnce](#function-name-bisectOnce) and [secantMethod](#function-name-secantMethod) for more details.
 
 ## Input:
-*  `double x0` - The initial guess of the root
-*  `double x0` - The second initial point to approximate the secant line
-*  `double a` - The lower bound of the interval containing a root  
-*  `double b` - The upper bound of the interval containing a root
+*  `double x0` - The initial guess of the root  
+*  `double x0` - The second initial point to approximate the secant line  
+*  `double a` - The lower bound of the interval containing a root    
+*  `double b` - The upper bound of the interval containing a root  
 *  `funx f` - A lambda function of the form `[](double x){return <FUNCTION>;}`,
  where <FUNCTION> is a function of x such as x\*x + x\*2  
-*  `double tol = 1e-12` - The tolernace for the error of the function  
-*  `int maxIter = 1e5` - The maximum number of iterations.  
+*  `double tol = 1e-12` - The tolernace for the error of the function    
+*  `int maxIter = 1e5` - The maximum number of iterations.    
 
 ## Output:
 *  Returns a root of the function within the given tolerance.
@@ -638,5 +638,4 @@ The root returned by the hybrid secant method of 3x*cos(10x) is -0.314159
 Frost Mitchell
 
 ### Last edited:
-2017-9-30
-
+2017-12-2
