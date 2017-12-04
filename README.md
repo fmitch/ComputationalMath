@@ -1,4 +1,4 @@
-# math4610
+# Computational Math
 
 ## Table of Contents
 1. [Machine Epsilon](./src/error/maceps.md)
