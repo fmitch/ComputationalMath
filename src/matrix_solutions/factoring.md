@@ -1,5 +1,4 @@
 # LU factorization
-## Table of Contents
 1. [sppLU](#function-name-spplu)
     1. [Description](#description)
     2. [Input](#input)

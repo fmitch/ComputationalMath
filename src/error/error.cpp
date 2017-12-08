@@ -26,6 +26,7 @@ Functions:
 
 **************************************/
 #include <math.h>
+#include "src/error/error.hpp"
 
 double relativeError(double exact, double approx){
     return fabs(exact - approx) / exact;

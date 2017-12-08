@@ -1,5 +1,5 @@
 #include <math.h>
-#include "factoring.hpp"
+#include "src/matrix_solutions/factoring.hpp"
 
 double rowMax(double* A, int row, int length){
     double ans = fabs(*((A+row*length) + 0));

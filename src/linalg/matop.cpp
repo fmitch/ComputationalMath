@@ -1,4 +1,4 @@
-#include "matop.hpp"
+#include "src/linalg/matop.hpp"
 #include <stdio.h>
 
 double* matAdd(double* A, double* B, int M, int N){

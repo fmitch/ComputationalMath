@@ -1,31 +1,27 @@
 # Polynomial Interpolation
-## Table of Contents
-1. [Divided Difference Coefficients](#function-name-dividedDifferenceCoefficients)
+1. [newtonInterpolation](#function-name-newtonInterpolation)
     1. [Description](#description)
     2. [Input](#input)
     3. [Output](#output)
     4. [Code](#code)
-2. [Newton Evalutaion](#function-name-newtonEvaluation)
-    1. [Description](#description-1)
-    2. [Input](#input-1)
-    3. [Output](#output-1)
-    4. [Code](#code-1)
-    5. [Example](#example-1)
+    5. [Example](#example)
  
-## Function Name: dividedDifferenceCoefficients
+## Function Name: newtonInterpolation
 
 ## Description:
 For a given data set of the form (x0,y1), calculate the divided difference table
-for this data, and return the coefficients which will be used to give the Newton
-form of the interpolating polynomial.
+for this data, and use the coefficients to give the Newton form of the 
+interpolating polynomial, and evaluate the polynomial at a given set of points.
  
 ## Input:
 *  `double* x` - A pointer to an array containing the abscissa points of the dataset
 *  `double* y` - A pointer to an array containing the ordinate points of the dataset
-*  `int size` - The length of the arrays x and y.
+*  `int sizeX` - The length of the arrays x and y.  
+*  `double* guess` - A pointer to an array containing the points to interpolate on.  
+*  `int sizeGuess` - The length of the arrays of points to interpolate on.
     
 ## Output:
-`double* coeff` - The coefficients of the Newton form of the polynomial.
+`double* ` - A pointer to an array of length `sizeGuess` containing the interpolated data.  
 
 ## Code:
 ```c
@@ -48,28 +44,7 @@ double* dividedDifferenceCoefficients(double* x, double* y, int size){
     }
     return coeff;
 }
-```
 
-
-## Function Name: newtonEvalutation
-
-## Description:
-Given the coefficients of the Newton form of an interpolating polynomial and the 
-dataset used to give the coefficients, calculate the values of the polynomial 
-at a set of points.
- 
-## Input:
-`double* guess` - A pointer to an array containing the points at which to evaluate the polynomial.
-`int sizeGuess` - The length of the array of points to be evaluated.
-`double* x` - A pointer to an array containing the abscissa points of the dataset
-`double* coeff` - A pointer to an array containing the coefficients of the Newton polynomial.
-`int sizeX` - The length of the arrays x and coeff.
-    
-## Output:
-`double* values` - A pointer to the array of calculated values.
-
-## Code:
-```c
 double* newtonEvaluation(double* guess, int sizeGuess, double* x, double* coeff, int sizeX){
     double* values = new double[sizeGuess];
     #pragma omp parallel for
@@ -79,6 +54,13 @@ double* newtonEvaluation(double* guess, int sizeGuess, double* x, double* coeff,
             values[i] = values[i]*(guess[i] - x[j]) + coeff[j];
     }
     return values;
+}
+
+double* newtonInterpolation(double* x, double* y, int sizeX, double* guess, int sizeGuess){
+    double* coeff = dividedDifferenceCoefficients(x, y, sizeX);
+    double* output =  newtonEvaluation(guess, sizeGuess, x, coeff, sizeX);
+    delete[] coeff;
+    return output;
 }
 ```
 
@@ -91,8 +73,7 @@ int main(){
     double x[5] = {0,1,2,3,4};
     double xNear[5] = {0.01,1.01,2.01,3.01,4.01};
     double y[5] = {0,1,8,27,64};
-    double* coeff = dividedDifferenceCoefficients(x, y, 5);
-    double* values = newtonEvaluation(xNear, 5, x, coeff, 5);
+    double* values = newtonInterpolation(x,y,size, interval, 2e4);
     for (int i = 0; i < 5; i++)
         printf("%f \n", values[i]);
     return 0;

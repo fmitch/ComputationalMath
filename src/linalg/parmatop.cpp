@@ -1,4 +1,4 @@
-#include "parmatop.hpp"
+#include "src/linalg/parmatop.hpp"
 #include <stdio.h>
 #include <omp.h>
 

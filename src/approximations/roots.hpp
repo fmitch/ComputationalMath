@@ -1,3 +1,6 @@
+#ifndef ROOTS_HPP
+#define ROOTS_HPP
+
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
@@ -180,3 +183,5 @@ double hybridSecantMethod(double x0, double x1, double a, double b, funx f, doub
         }
     }
 }
+
+#endif

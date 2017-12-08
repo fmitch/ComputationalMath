@@ -1,8 +1,8 @@
-#include "power.hpp"
-#include "pariterative.hpp"
-#include "parmatop.hpp"
-#include "matop.hpp"
-#include "norms.hpp"
+#include "src/eigenvalues/power.hpp"
+#include "src/matrix_solutions/pariterative.hpp"
+#include "src/linalg/parmatop.hpp"
+#include "src/linalg/matop.hpp"
+#include "src/linalg/norms.hpp"
 #include <omp.h>
 #include <utility>
 #include <math.h>

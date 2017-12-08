@@ -1,5 +1,5 @@
 #include <math.h>
-#include "norms.hpp"
+#include "src/linalg/norms.hpp"
 
 double vec1norm(double* vec, int size){
     double out = 0;

@@ -9,7 +9,7 @@ Distributed as "public software", freely used for any noncommercial purpose.
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "fft.h"
+#include "src/fft/fft.h"
 
 #ifndef PI
 # define PI	3.14159265358979323846264338327950288

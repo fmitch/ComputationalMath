@@ -1,9 +1,10 @@
-#include "iterative.hpp"
-#include "matop.hpp"
+#include "src/matrix_solutions/iterative.hpp"
+#include "src/linalg/parmatop.hpp"
+#include "src/linalg/matop.hpp"
 #include <math.h>
+#include <omp.h>
 
-double* jacobi(double* A, double* b, int N, int& count, long double tol, int maxIter){
-    double LUx;
+double* parJacobi(double* A, double* b, int N, int& count, long double tol, int maxIter){
     count = 0;
     double* xk = new double[N];
     double* xkk = new double[N];
@@ -13,12 +14,12 @@ double* jacobi(double* A, double* b, int N, int& count, long double tol, int max
         xk[i] = b[i];
     while(count < maxIter && error > tol){
         error = 0;
+        #pragma omp parallel for
         for( int i = 0; i < N; i++){
-            LUx = 0;
-            for ( int j = 0; j < i; j++)
-                LUx += *((A+i*N) + j) * xk[j];
-            for ( int j = i+1; j < N; j++)
-                LUx += *((A+i*N) + j) * xk[j];
+            double LUx = 0;
+            for ( int j = 0; j < N; j++)
+                if (i != j)
+                    LUx += *((A+i*N) + j) * xk[j];
             xkk[i]  = (b[i] - LUx) / *((A+i*N)+i);
             diff = fabs(xkk[i] - xk[i]);
             error += diff*diff;
@@ -31,13 +32,12 @@ double* jacobi(double* A, double* b, int N, int& count, long double tol, int max
     return xk;
 }
 
-double* gaussSeidel(double* A, double* b, int N, int& count, long double tol, int maxIter){
-    double Lx;
+double* parGaussSeidel(double* A, double* b, int N, int& count, long double tol, int maxIter){
     count = 0;
     double* xk = new double[N];
     double* xkk = new double[N];
     long double error = tol*100;
-    double sum, diff;
+    double diff;
     for( int i = 0; i < N; i++)
     {
         xk[i] = b[i];
@@ -45,14 +45,15 @@ double* gaussSeidel(double* A, double* b, int N, int& count, long double tol, in
     }
     while(count < maxIter && error > tol){
         diff = 0;
+        #pragma omp parallel for
         for( int i = 0; i < N; i++){
-            Lx = 0;
+            double Lx = 0;
             for ( int j = 0; j < i; j++)
                 Lx += *((A+i*N) + j) * xk[j];
             xkk[i]  = (b[i] - Lx) ;
         }
         for( int i = N-1; i >= 0; i--){
-            sum = 0;
+            double sum = 0;
             for ( int j = i+1; j < N; j++)
                 sum += *((A+ i*N) + j) * xkk[j];
             xkk[i] = (xkk[i] - sum) / *((A+i*N) + i);
@@ -67,11 +68,11 @@ double* gaussSeidel(double* A, double* b, int N, int& count, long double tol, in
     return xk;
 }
 
-double* steepestDescent(double* A, double* b, int N, int& count, long double tol, int maxIter){
+double* parSteepestDescent(double* A, double* b, int N, int& count, long double tol, int maxIter){
     double* r = new double[N];
     double* xk = new double[N];
     double* Ar = new double[N];
-    Ar = matVecMul(A, b, N, N);
+    Ar = parMatVecMul(A, b, N, N);
     for (int i = 0; i < N; i++){
         r[i] = b[i] - Ar[i];
         xk[i] = b[i];
@@ -82,7 +83,7 @@ double* steepestDescent(double* A, double* b, int N, int& count, long double tol
     double alpha;
     count = 0;
     while( delta_k > tol * tol * b_delta && count < maxIter){
-        Ar = matVecMul(A, r, N, N);
+        Ar = parMatVecMul(A, r, N, N);
         alpha = delta_k/(dotProduct(r, Ar, N));
         for (int i = 0; i < N; i++){
             xk[i] = xk[i] + alpha*r[i];
@@ -94,7 +95,7 @@ double* steepestDescent(double* A, double* b, int N, int& count, long double tol
     return xk;
 }
 
-double* conjugateGradient(double* A, double* b, int N, int& count, long double tol, int maxIter){
+double* parConjugateGradient(double* A, double* b, int N, int& count, long double tol, int maxIter){
     double* r = new double[N];
     double* p = new double[N];
     double* xk = new double[N];
@@ -111,7 +112,7 @@ double* conjugateGradient(double* A, double* b, int N, int& count, long double t
     double alpha, delta_k1;
     count = 0;
     while( delta_k > tol * tol * b_delta && count < maxIter){
-        Ap = matVecMul(A, p, N, N);
+        Ap = parMatVecMul(A, p, N, N);
         alpha = delta_k/(dotProduct(p, Ap, N));
         for (int i = 0; i < N; i++){
             xk[i] = xk[i] + alpha*p[i];

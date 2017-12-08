@@ -1,25 +1,30 @@
-#include "iterative.hpp"
-#include "parmatop.hpp"
-#include "matop.hpp"
+#include "src/matrix_solutions/iterative.hpp"
+#include "src/linalg/matop.hpp"
 #include <math.h>
-#include <omp.h>
 
-double* parJacobi(double* A, double* b, int N, int& count, long double tol, int maxIter){
+double* jacobi(double* A, double* b, int N, int& count, long double tol, int maxIter, double* guess){
+    double LUx;
     count = 0;
-    double* xk = new double[N];
+    double* xk;
+    if (guess == nullptr)
+    {
+        xk = new double[N];
+        for( int i = 0; i < N; i++)
+            xk[i] = b[i];
+    }
+    else
+        xk = guess;
     double* xkk = new double[N];
     long double error = tol * 100;
     double diff;
-    for( int i = 0; i < N; i++)
-        xk[i] = b[i];
     while(count < maxIter && error > tol){
         error = 0;
-        #pragma omp parallel for
         for( int i = 0; i < N; i++){
-            double LUx = 0;
-            for ( int j = 0; j < N; j++)
-                if (i != j)
-                    LUx += *((A+i*N) + j) * xk[j];
+            LUx = 0;
+            for ( int j = 0; j < i; j++)
+                LUx += *((A+i*N) + j) * xk[j];
+            for ( int j = i+1; j < N; j++)
+                LUx += *((A+i*N) + j) * xk[j];
             xkk[i]  = (b[i] - LUx) / *((A+i*N)+i);
             diff = fabs(xkk[i] - xk[i]);
             error += diff*diff;
@@ -29,31 +34,37 @@ double* parJacobi(double* A, double* b, int N, int& count, long double tol, int 
         error = sqrt(error);
         count++;
     }
+    delete[] xkk;
     return xk;
 }
 
-double* parGaussSeidel(double* A, double* b, int N, int& count, long double tol, int maxIter){
+double* gaussSeidel(double* A, double* b, int N, int& count, long double tol, int maxIter, double* guess){
+    double Lx;
     count = 0;
-    double* xk = new double[N];
+    double* xk;
+    if (guess == nullptr)
+    {
+        xk = new double[N];
+        for( int i = 0; i < N; i++)
+        {
+            xk[i] = b[i];
+        }
+    }
+    else
+        xk = guess;
     double* xkk = new double[N];
     long double error = tol*100;
-    double diff;
-    for( int i = 0; i < N; i++)
-    {
-        xk[i] = b[i];
-        xkk[i] = b[i];
-    }
+    double sum, diff;
     while(count < maxIter && error > tol){
         diff = 0;
-        #pragma omp parallel for
         for( int i = 0; i < N; i++){
-            double Lx = 0;
+            Lx = 0;
             for ( int j = 0; j < i; j++)
                 Lx += *((A+i*N) + j) * xk[j];
             xkk[i]  = (b[i] - Lx) ;
         }
         for( int i = N-1; i >= 0; i--){
-            double sum = 0;
+            sum = 0;
             for ( int j = i+1; j < N; j++)
                 sum += *((A+ i*N) + j) * xkk[j];
             xkk[i] = (xkk[i] - sum) / *((A+i*N) + i);
@@ -65,14 +76,15 @@ double* parGaussSeidel(double* A, double* b, int N, int& count, long double tol,
         error = diff*diff;
         count++;
     }
+    delete[] xkk;
     return xk;
 }
 
-double* parSteepestDescent(double* A, double* b, int N, int& count, long double tol, int maxIter){
+double* steepestDescent(double* A, double* b, int N, int& count, long double tol, int maxIter){
     double* r = new double[N];
     double* xk = new double[N];
     double* Ar = new double[N];
-    Ar = parMatVecMul(A, b, N, N);
+    Ar = matVecMul(A, b, N, N);
     for (int i = 0; i < N; i++){
         r[i] = b[i] - Ar[i];
         xk[i] = b[i];
@@ -83,7 +95,7 @@ double* parSteepestDescent(double* A, double* b, int N, int& count, long double 
     double alpha;
     count = 0;
     while( delta_k > tol * tol * b_delta && count < maxIter){
-        Ar = parMatVecMul(A, r, N, N);
+        Ar = matVecMul(A, r, N, N);
         alpha = delta_k/(dotProduct(r, Ar, N));
         for (int i = 0; i < N; i++){
             xk[i] = xk[i] + alpha*r[i];
@@ -92,10 +104,12 @@ double* parSteepestDescent(double* A, double* b, int N, int& count, long double 
         delta_k = dotProduct(r, r, N);
         count++;
     }
+    delete[] r;
+    delete[] Ar;
     return xk;
 }
 
-double* parConjugateGradient(double* A, double* b, int N, int& count, long double tol, int maxIter){
+double* conjugateGradient(double* A, double* b, int N, int& count, long double tol, int maxIter){
     double* r = new double[N];
     double* p = new double[N];
     double* xk = new double[N];
@@ -112,7 +126,7 @@ double* parConjugateGradient(double* A, double* b, int N, int& count, long doubl
     double alpha, delta_k1;
     count = 0;
     while( delta_k > tol * tol * b_delta && count < maxIter){
-        Ap = parMatVecMul(A, p, N, N);
+        Ap = matVecMul(A, p, N, N);
         alpha = delta_k/(dotProduct(p, Ap, N));
         for (int i = 0; i < N; i++){
             xk[i] = xk[i] + alpha*p[i];
@@ -124,5 +138,8 @@ double* parConjugateGradient(double* A, double* b, int N, int& count, long doubl
         delta_k = delta_k1;
         count++;
     }
+    delete[] r;
+    delete[] Ap;
+    delete[] p;
     return xk;
 }

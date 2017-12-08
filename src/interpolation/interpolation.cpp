@@ -1,4 +1,4 @@
-#include "interpolation.hpp"
+#include "src/interpolation/interpolation.hpp"
 #include <omp.h>
 
 double* dividedDifferenceCoefficients(double* x, double* y, int size){
@@ -35,5 +35,7 @@ double* newtonEvaluation(double* guess, int sizeGuess, double* x, double* coeff,
 
 double* newtonInterpolation(double* x, double* y, int sizeX, double* guess, int sizeGuess){
     double* coeff = dividedDifferenceCoefficients(x, y, sizeX);
-    return newtonEvaluation(guess, sizeGuess, x, coeff, sizeX);
+    double* output =  newtonEvaluation(guess, sizeGuess, x, coeff, sizeX);
+    delete[] coeff;
+    return output;
 }
