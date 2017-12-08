@@ -5,6 +5,11 @@ include_directories(
 add_executable(Test main.cpp)
 target_link_libraries(
   Test
-  error
   approximations
+  eigenvalues
+  error
+  fft
+  interpolation
+  linalg
+  matrix_solutions
   )
