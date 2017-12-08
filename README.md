@@ -12,6 +12,6 @@
     1. [LU factorization with scaled partial pivoting](./src/matrix_solutions/factoring.md)
     2. [Iterative matrix methods](./src/matrix_solutions/iterative.md)
     3. [Parallel iterative matrix methods](./src/matrix_solutions/pariterative.md)
-5. [Power Methods for finding eigenvalues](./src/linalg/eigenvalues.md)
+5. [Power Methods for finding eigenvalues](./src/eigenvalues/eigenvalues.md)
 6. [Polynomial interpolation](./src/interpolation/interpolation.md)
 7. [Discrete Fourier Transform](./src/fft/fft.md)
